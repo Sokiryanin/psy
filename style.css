@@ -1,12 +1,17 @@
 /* ─────────────────────────────────────────
      DESIGN TOKENS
      ───────────────────────────────────────── */
+
+/*
+    Скажіть номер або назву — замінимо у файлі. Це лише два значення 
+    в :root (--sage і --sage-hover), тому правка чиста.
+    */
 :root {
   --bg: #faf8f5;
   --surface: #ffffff;
   --surface-alt: #f5f2ec;
-  --sage: #2e5d4f;
-  --sage-hover: #254a3f;
+  --sage: #6b2e37;
+  --sage-hover: #4b1921;
   --sage-soft: rgba(46, 93, 79, 0.08);
   --ink: #1c1c1a;
   --ink-soft: #6b6b66;
@@ -338,7 +343,8 @@ section {
   position: relative;
 }
 .nav__links a:hover {
-  color: var(--sage);
+  background: var(--sage);
+  color: #fff;
 }
 .nav__burger {
   display: none;
@@ -368,7 +374,6 @@ section {
 .nav__overlay a {
   font-family: var(--font-serif);
   font-size: 32px;
-  padding: 16px 0;
   color: var(--ink);
   border-bottom: 1px solid var(--border);
 }
