@@ -1,17 +1,12 @@
 /* ─────────────────────────────────────────
      DESIGN TOKENS
      ───────────────────────────────────────── */
-
-/*
-    Скажіть номер або назву — замінимо у файлі. Це лише два значення 
-    в :root (--sage і --sage-hover), тому правка чиста.
-    */
 :root {
   --bg: #faf8f5;
   --surface: #ffffff;
   --surface-alt: #f5f2ec;
   --sage: #6b2e37;
-  --sage-hover: #4b1921;
+  --sage-hover: #3e1319;
   --sage-soft: rgba(46, 93, 79, 0.08);
   --ink: #1c1c1a;
   --ink-soft: #6b6b66;
@@ -343,8 +338,7 @@ section {
   position: relative;
 }
 .nav__links a:hover {
-  background: var(--sage);
-  color: #fff;
+  color: var(--sage);
 }
 .nav__burger {
   display: none;
@@ -367,13 +361,16 @@ section {
   transform: translateY(-100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .nav__overlay.open {
   transform: translateY(0);
 }
-.nav__overlay a {
+.nav__overlay a:not(.btn) {
   font-family: var(--font-serif);
   font-size: 32px;
+  padding: 16px 0;
   color: var(--ink);
   border-bottom: 1px solid var(--border);
 }
@@ -1438,6 +1435,25 @@ body.menu-open {
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 6px;
+  }
+
+  /* ── Кнопки ── однаковий розмір і без overflow ── */
+  .btn {
+    white-space: normal;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .btn--lg {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  .cta .btn {
+    width: 100%;
+    max-width: 360px;
+  }
+  .nav__overlay .btn {
+    align-self: stretch;
+    width: 100%;
   }
 
   /* ── CONTACTS ── */
